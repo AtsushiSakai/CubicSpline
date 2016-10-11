@@ -8,6 +8,7 @@ import numpy as np
 
 def CubicFunc(x,p):
     y=p[0]*(x**3)+p[1]*(x**2)+p[2]*x+p[3]
+    print(p[3])
     return y
 
 #input, output
