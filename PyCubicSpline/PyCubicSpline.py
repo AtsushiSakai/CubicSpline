@@ -55,13 +55,18 @@ class PyCubicSpline:
                 self.d.append((self.c[i+1]-self.c[i])/3.0)
                 self.b.append(self.a[i+1]-self.a[i]-self.c[i]-self.d[i])
 
+        #  print(self.a)
+        #  print(self.b)
+        #  print(self.c)
+        #  print(self.d)
+
 
     def Calc(self,t):
         j=int(math.floor(t))
         if(j<0):
             j=0
         elif(j>=len(self.a)):
-            j=num-1
+            j=len(self.a)-1
 
         dt=t-j
         result=self.a[j]+(self.b[j]+(self.c[j]+self.d[j]*dt)*dt)*dt
