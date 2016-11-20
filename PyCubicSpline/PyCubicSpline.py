@@ -106,6 +106,14 @@ class PyCubicSpline:
         return result
 
 
+def CalcXYCurvature(s,sx,sy):
+    dx  = sx.Calcd(s)
+    ddx = sx.Calcdd(s)
+    dy  = sy.Calcd(s)
+    ddy = sy.Calcdd(s)
+    k   = (ddy*dx-ddx*dy)/(dx**2+dy**2)
+    return k
+
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
     #input

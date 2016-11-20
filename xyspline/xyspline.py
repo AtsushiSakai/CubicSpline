@@ -8,18 +8,10 @@ license: MIT
 """
 
 import pandas as pd
-from PyCubicSpline import PyCubicSpline
+from PyCubicSpline import PyCubicSpline,CalcXYCurvature
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-
-def CalcXYCurvature(s,sx,sy):
-    dx  = sx.Calcd(s)
-    ddx = sx.Calcdd(s)
-    dy  = sy.Calcd(s)
-    ddy = sy.Calcdd(s)
-    k   = (ddy*dx-ddx*dy)/(dx**2+dy**2)
-    return k
 
 def Test():
     print("test")
